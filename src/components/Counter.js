@@ -8,6 +8,7 @@ const styleConfig = {
     '[counter=0]': classes.zero,
     '::numLabel': classes.numLabel,
     '::counterEven': classes.counterEven,
+    '::buttons': classes.buttons
   }
 };
 
@@ -34,7 +35,7 @@ class Counter extends Component {
         based on the counter's value on state. */}
         <div {...styles.counterEven}>{this.props.counter % 2 === 0 ? 'even' : 'odd'}</div>
         <br />
-        <div className="counter-buttons">
+        <div {...styles.buttons}>
           <button onClick={() => {this.handleDecrement();}}>-</button>
           <button onClick={() => {this.handleIncrement();}}>+</button>
         </div>

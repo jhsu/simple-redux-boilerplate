@@ -7,12 +7,12 @@ import Footer from '../components/Footer';
 
 
 const theme = {
-  mainBgColor: '#f1f2f0';
-  accentBlue: '#37bbe4';
-  accentGrey: '#e1e0dd';
-  accentBlack: '#35342f';
-  accentOrange: '#ec6b2d';
-  accentRed: '#dd6464';
+  mainBgColor: '#f1f2f0',
+  accentBlue: '#37bbe4',
+  accentGrey: '#e1e0dd',
+  accentBlack: '#35342f',
+  accentOrange: '#ec6b2d',
+  accentRed: '#dd6464',
 }
 
 /**
@@ -24,7 +24,6 @@ export default class App extends Component {
   render() {
     // we can use ES6's object destructuring to effectively 'unpack' our props
     const { counter, actions } = this.props;
-    console.log(counter);
     return (
       <div className="main-app-container">
         <div className="main-app-nav">Simple Redux Boilerplate</div>
