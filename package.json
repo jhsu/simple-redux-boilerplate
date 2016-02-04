@@ -45,9 +45,11 @@
     "webpack-hot-middleware": "^2.6.0"
   },
   "dependencies": {
+    "fbjs": "^0.2.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.1.1",
+    "react-seamstress": "^0.4.0",
     "redux-thunk": "^1.0.3"
   }
 }

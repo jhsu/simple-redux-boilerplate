@@ -1,0 +1,22 @@
+.zero {
+  opacity: 0.3
+}
+
+.numLabel {
+  color: red;
+  padding-top: 1em;
+  font-size: 3em;
+  text-align: center;
+  width: 100%;
+
+}
+
+
+
+.counterEven {
+  padding-top: 1em;
+  font-size: 0.75em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

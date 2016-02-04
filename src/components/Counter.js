@@ -1,6 +1,17 @@
 import React, { Component, PropTypes } from 'react';
+import Seamstress from 'react-seamstress';
+import classes from './Counter.css';
 
-export default class Counter extends Component {
+const styleConfig = {
+  styles: {
+    ':base': ['counter-container'],
+    '[counter=0]': classes.zero,
+    '::numLabel': classes.numLabel,
+    '::counterEven': classes.counterEven,
+  }
+};
+
+class Counter extends Component {
   constructor(props, context) {
     super(props, context);
   }
@@ -14,13 +25,14 @@ export default class Counter extends Component {
   }
 
   render() {
+    let styles = this.props.computedStyles;
     return (
-      <div className="counter-container">
-        <div className="counter-num-label">{this.props.counter}</div>
+      <div {...styles.root}>
+        <div {...styles.numLabel}>{this.props.counter}</div>
         {/* Below, the even or odd statement is simply used to demonstrate how one could
         easily use a ternary operator to conditionally show an 'even' or 'odd' string
         based on the counter's value on state. */}
-        <div className="counter-even-label">{this.props.counter % 2 === 0 ? 'even' : 'odd'}</div>
+        <div {...styles.counterEven}>{this.props.counter % 2 === 0 ? 'even' : 'odd'}</div>
         <br />
         <div className="counter-buttons">
           <button onClick={() => {this.handleDecrement();}}>-</button>
@@ -35,3 +47,5 @@ Counter.propTypes = {
   counter: PropTypes.number.isRequired,
   actions: PropTypes.object.isRequired
 };
+
+export default Seamstress.createContainer(Counter, styleConfig)

@@ -44,7 +44,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass'
+        loaders: ['style', 'css', 'sass']
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]']
       }
     ]
   }
